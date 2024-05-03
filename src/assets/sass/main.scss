@@ -1,0 +1,140 @@
+@import 'reset.scss';
+@import './colors.scss';
+@import './popular-queries';
+
+html {
+    width: 100%;
+    height: 100%;
+    body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $bg-color;
+    }
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.info-block {
+    padding: 40px 60px;
+    width: 920px;
+    height: 400px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 60px 100px 0px #00000033;
+        
+        &__search {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+                .error {
+                    color: #FF555F;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    margin-left: 60px;
+                    margin-top: 130px;
+                }
+                .button {
+                    font-weight: 500;
+                    color: $white;
+                    font-size: 18px;
+                    background-color: #00D1FF;
+                    border-radius: 16px;
+                    width: 300px;
+                    cursor: pointer;
+                    transition: .2s;
+                        &:hover {
+                            transform: scale(1.05);
+                            transition: .2s;
+                            background-color: #20d6ff;
+                        }
+                        &:disabled {
+                            cursor: auto;
+                            transform: none;
+                            background-color: #3D4665;
+                        }
+                }
+                .input {
+                    width: 100%;
+                    text-align: center;
+                    height: 80px;
+                    border-radius: 16px;
+                    color: $main-color;
+                    font-size: 20px;
+                    font-weight: 500;
+                    background-color: $white;
+                    transition: .2s;
+                    &::placeholder {
+                        color: $main-color;
+                        font-size: 18px;
+                        font-weight: 500;
+                        transition: .2s;
+                    }
+                    &:focus, &:hover {
+                        background-color: $white-focus;
+                        transition: .2s;
+                        &::placeholder {
+                            opacity: 0.3;
+                            transition: .2s;
+                        }
+                    }
+                }
+        }
+}
+
+.info-block__weather {
+    color: $white;
+    display: flex;
+    gap: 60px;
+    .temperature {
+        font-size: 120px;
+        font-weight: 600;
+        color: $white;
+        line-height: 91px;
+    }
+    .weather-text {
+        color: $desc-color;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+        .info__place {
+            display: flex;
+            gap: 10px;
+            align-items: end;
+                .location-icon {
+                    width: 25px;
+                    height: 25px;
+                }
+        }
+        .info__weather {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-left: 34px;
+        }
+        .main-text {
+            line-height: 23px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+}
+
+.info-block__temp {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
